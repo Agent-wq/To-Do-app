@@ -9,17 +9,23 @@
 </head>
 <body>
     <div class="container">
+
         <!--Title-Heading-->
         <h1 style="color: wheat;">To-Do List</h1>
+
         <!--Form for adding tasks-->
-        <form id="task-form"></form>
+        <form id="task-form">
         <label for="task-Title">Task Title:</label>
         <input type="text" id="task-Title" required>
 
         <label for="task-Description">Task Description:</label>
         <input type="text" id="task-Description">
 
-        <button type="button" onclick="addTask">Add Task</button>
+        <button type="button" onclick="addTask()">Add Task</button>
+        </form> 
+        <div>
+            <h3>To-Do</h3>
+        </div>
 
         <!--Display area for tasks -->
         <div id="tasks-list">
