@@ -70,3 +70,23 @@ button:hover {
     color: #666;
     margin: 8px 0;
 }
+/* Add the following styles to your CSS file */
+
+.task-container {
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    border: 1px solid black;
+    width: 20px;
+}
+
+.task-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}

@@ -30,25 +30,43 @@ function addTask(){
 
     console.log("Task added");
 }
-
 // Display the tasks
 function displayTasks() {
-    
     // Get the task list container
     const taskListContainer = document.getElementById("tasks-list");
 
-    // Clear the previous tasks
-    taskListContainer.innerHTML = '';
+    // Clear previous tasks
+    taskListContainer.innerHTML = "";
 
-    // Display each task in a list
-    tasks.forEach((tasks,index) => {
+    // Display each task in the list
+    tasks.forEach((task, index) => {
         const taskItem = document.createElement("div");
         taskItem.classList.add("task-item");
 
-        // Customize the display format as needed
-        taskItem.innerHTML = `<strong>${tasks.title}</strong><p>${tasks.description}</p>`;
+        // Create a container for the checkbox and task details
+        const taskContainer = document.createElement("div");
+        taskContainer.classList.add("task-container");
 
-        // Append the task item to the task list container
+        // Create a checkbox element
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = tasks.completed;
+        checkbox.addEventListener("change", () => toggleTaskCompletion(index));
+
+        // Customize the display format as needed
+        const taskDetails = document.createElement("div");
+        taskDetails.innerHTML = `<strong>${task.title}</strong><p>${task.description}</p>`;
+
+        // Append the checkbox and task details to the task container
+        taskContainer.appendChild(checkbox);
+        taskContainer.appendChild(taskDetails);
+
+        // Append the task container to the task list container
+        taskItem.appendChild(taskContainer);
         taskListContainer.appendChild(taskItem);
     });
+}
+function toggleTaskCompletion(index) {
+    tasks[index].completed = !tasks[index].completed;
+    displayTasks();
 }
