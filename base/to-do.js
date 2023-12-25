@@ -64,6 +64,10 @@ function displayTasks() {
         // Append the task container to the task list container
         taskItem.appendChild(taskContainer);
         taskListContainer.appendChild(taskItem);
+
+        // Draw a checkbox
+        let checkBox = document.createElement("input")
+        checkBox.setAttribute("type","checkbox")
     });
 }
 function toggleTaskCompletion(index) {
