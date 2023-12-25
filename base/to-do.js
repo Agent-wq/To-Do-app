@@ -50,12 +50,12 @@ function displayTasks() {
         // Create a checkbox element
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
-        checkbox.checked = tasks.completed;
+        checkbox.checked = task.completed;
         checkbox.addEventListener("change", () => toggleTaskCompletion(index));
 
         // Customize the display format as needed
         const taskDetails = document.createElement("div");
-        taskDetails.innerHTML = `<strong>${task.title}</strong><p>${task.description}</p>`;
+        taskDetails.innerHTML = `<strong style="${task.completed ? 'text-decoration: line-through;' : ''}">${task.title}</strong><p style="${task.completed ? 'text-decoration: line-through;' : ''}">${task.description}</p>`;
 
         // Append the checkbox and task details to the task container
         taskContainer.appendChild(checkbox);
